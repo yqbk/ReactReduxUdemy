@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchWeather } from '../actions/index'
 
-
 class SearchBar extends Component {
   constructor(props) {
     super(props)
@@ -24,7 +23,6 @@ class SearchBar extends Component {
     this.props.fetchWeather(this.state.term)
     this.setState({ term: '' })
   }
-
 
   render() {
     return (

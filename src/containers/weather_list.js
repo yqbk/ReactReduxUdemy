@@ -5,14 +5,13 @@ import GoogleMap from "../components/google_map"
 import Chart from '../components/chart'
 
 class WeatherList extends Component {
+
  renderWeather(cityData) {
    const name = cityData.city.name
    const temps = cityData.list.map( weather => weather.main.temp - 273)
    const pressures = cityData.list.map( weather => weather.main.pressure)
    const humidities = cityData.list.map( weather => weather.main.humidity)
    const { lon, lat } = cityData.city.coord
-
-
 
    return (
      <tr key={name}>
