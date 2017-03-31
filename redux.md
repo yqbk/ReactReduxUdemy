@@ -91,6 +91,11 @@ function mapStateToProps(state) {
   };
 }
 
+// With ES6 syntax
+function mapStateToProps({ weather }) {
+  return { weather }
+}
+
 // Anything returned from this  function will end up as props
 // on te BookList container
 function mapDispatchToProps(dispatch) {
