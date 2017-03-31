@@ -44,8 +44,8 @@ template of Action reducer:
 export function actionCreator(element) {
     
     return {
-        type: TYPE_OF_ACTION,
-        payload: element <optional field>
+        type: 'TYPE_OF_ACTION',
+        payload: element //optional field
     }
 }
 ```
@@ -75,3 +75,33 @@ If you ever passing a callback around as a function and the callback has referen
 ## axios
 
 Library for making AJAX requests from the browser.
+
+
+
+# Redux - connecting with container
+
+Do not export container by default - use `connect` instead!
+
+```javascript
+function mapStateToProps(state) {
+  // Whatever is returned will show up as props
+  // inside of BookList
+  return {
+    books: state.books
+  };
+}
+
+// Anything returned from this  function will end up as props
+// on te BookList container
+function mapDispatchToProps(dispatch) {
+  // Whenever selectBook is called, the result should be passed to
+  // to all of our reducers
+  return bindActionCreators({ selectBook: selectBook}, dispatch)
+}
+
+
+// Promote BookList from a component to a container - it needs to know
+// about this new dispatch method, selectBook. Make it available
+// as a prop.
+export default connect(mapStateToProps, mapDispatchToProps)(BookList);
+```
