@@ -110,3 +110,15 @@ function mapDispatchToProps(dispatch) {
 // as a prop.
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
 ```
+
+## refs
+
+```javascript
+<div ref="map" />
+```
+can be accessed in the code by `this.refs.map`
+
+
+## redux middleware
+
+`redux-promise` allows to wait until request (promise) is finished before forwarding it to appropriate reducer.
