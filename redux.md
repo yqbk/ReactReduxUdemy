@@ -64,3 +64,14 @@ export default function(state = null, action) {
 
 }
 ```
+
+
+------
+## Rule of thumb
+
+If you ever passing a callback around as a function and the callback has reference to this, **you need to bind it to the context**.
+
+
+## axios
+
+Library for making AJAX requests from the browser.
