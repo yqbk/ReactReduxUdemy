@@ -33,8 +33,18 @@ When we have nested routes (here greeting inside the app)
 ```javascript
 <Route path="/" component={ App }>
     <Route path="greet" component={Greeting}/>
-    <Route path="greet2" component={Greeting}/>
-    <Route path="greet3" component={Greeting}/>
   </Route>
 ```
 child component (Greeting) is passed to parent component (App) as `this.props.children`
+
+
+## Index route
+
+Index route is used when no child matches the URL.
+
+```javascript
+  <Route path="/" component={App}>
+    <IndexRoute component={PostsIndex}/>
+    <Route path="greet" component={Greeting} />
+  </Route>
+```
