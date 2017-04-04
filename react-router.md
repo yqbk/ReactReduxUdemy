@@ -86,3 +86,26 @@ export function fetchPosts() {
     console.log('test')
   }
 ```
+
+## Link component
+
+Links are React components that behave as a real links.
+
+```javascript
+import { Link } from 'react-router'
+```
+
+```javascript
+render() {
+  return (
+      <div>
+        <div className="text-xs-right">
+          <Link to="/posts/new" className="btn btn-primary">
+            Add a Post
+          </Link>
+        </div>
+        List of blog posts.
+      </div>
+    )
+  }
+```
