@@ -14,3 +14,15 @@ Takes a new URL from history and updates react components.
 1. browserHistory - analyze the whole URL
 2. hashHistory - analyze URL after `#` sign
 3. memoryHistory - don't use URLs at all
+
+
+### Example 
+```javascript
+import React from 'react';
+import { Route, IndexRoute } from 'react-router';
+
+import App from './components/app';
+
+<Route path="/" component={ App }/>
+```
+google.com/  ⇒  renders App
