@@ -48,3 +48,31 @@ Index route is used when no child matches the URL.
     <Route path="greet" component={Greeting} />
   </Route>
 ```
+
+## Get request using axios
+
+
+1. In `src\index.js` 
+```javascript
+import promise from 'redux-promise'
+
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+```
+
+2. In `actions\index.js`
+```javascript
+import axios from 'axios'
+
+export const FETCH_POSTS = 'FETCH_POSTS'
+
+const ROOT_URL = 'http://reduxblog.herokuapp.com/api'
+const API_KEY = '?key=yqbk'
+
+export function fetchPosts() {
+  const request = axios.get(`${ROOT_URL}/posts${API_KEY}`)
+  return {
+    type: FETCH_POSTS,
+    payload: request
+  }
+}
+```
