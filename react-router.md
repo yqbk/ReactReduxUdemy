@@ -76,3 +76,13 @@ export function fetchPosts() {
   }
 }
 ```
+
+## React lifecycle methods
+
+`componentWillMount` is lifecycle method that is used whenever our component is about to be created for the**first time**.
+
+```javascript
+  componentWillMount() {
+    console.log('test')
+  }
+```
