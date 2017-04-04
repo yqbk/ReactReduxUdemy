@@ -26,3 +26,15 @@ import App from './components/app';
 <Route path="/" component={ App }/>
 ```
 google.com/  ⇒  renders App
+
+### Nested route
+
+When we have nested routes (here greeting inside the app)
+```javascript
+<Route path="/" component={ App }>
+    <Route path="greet" component={Greeting}/>
+    <Route path="greet2" component={Greeting}/>
+    <Route path="greet3" component={Greeting}/>
+  </Route>
+```
+child component (Greeting) is passed to parent component (App) as `this.props.children`
