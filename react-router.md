@@ -109,3 +109,40 @@ render() {
     )
   }
 ```
+
+
+## Redux-Form
+
+Package for managing form state in Redux.
+
+
+```javascript
+import { reducer as formReducer } from 'redux-form'
+
+const rootReducer = combineReducers({
+  form: formReducer
+});
+```
+
+```javascript
+import React, { Component } from 'react'
+import { reduxForm } from 'redux-form'
+
+class PostsNew extends Component {
+  render() {
+    return (
+      <div>Create Form</div>
+    )
+  }
+}
+
+export default reduxForm({
+  form: 'PostsNewForm',
+  fields: ['title', 'categories', 'content']
+})(PostsNew)
+```
+
+`{...object}` decompose given object into separate keys and values. Example:
+```javasript
+input type="text" className="form-control" {...title}/>
+```
